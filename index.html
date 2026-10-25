@@ -1,0 +1,794 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#11120f">
+    <meta name="description" content="Southside Distro is a front-end demo for organizing independent music releases.">
+    <title>
+      Southside Distro — Your music, moving
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer>
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">
+      Skip to content
+    </a>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Main navigation">
+        <a class="brand" href="#dashboard" data-view-link="dashboard" aria-label="Southside Distro home">
+          <span class="brand-mark">
+            S
+            <span>
+              ✳
+            </span>
+          </span>
+          <span class="brand-name">
+            SOUTHSIDE
+            <br>
+            <b>
+              DISTRO
+            </b>
+          </span>
+        </a>
+        <p class="side-label">
+          WORKSPACE
+          <span>
+            01
+          </span>
+        </p>
+        <nav class="primary-nav">
+          <button class="nav-link is-active" data-view-link="dashboard">
+            <span class="nav-icon">
+              ◫
+            </span>
+            Artist Dashboard
+          </button>
+          <button class="nav-link" data-view-link="submit">
+            <span class="nav-icon">
+              ＋
+            </span>
+            Submit a Release
+          </button>
+          <button class="nav-link" data-view-link="releases">
+            <span class="nav-icon">
+              ▤
+            </span>
+            My Releases
+            <span class="nav-count" id="nav-count">
+              0
+            </span>
+          </button>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="demo-note">
+            <span class="pulse-dot">
+            </span>
+            <div>
+              <b>
+                FRONT-END DEMO
+              </b>
+              <p>
+                Nothing is distributed to any music platform.
+              </p>
+            </div>
+          </div>
+          <button class="text-button" id="reset-demo">
+            ↻ Reset demo data
+          </button>
+          <div class="sidebar-credit">
+            MADE FOR THE
+            <br>
+            <b>
+              INDEPENDENT SOUND.
+            </b>
+            <span>
+              SOUTHERN NIGERIA · NG
+            </span>
+          </div>
+        </div>
+      </aside>
+      <div class="main-column">
+        <header class="topbar">
+          <div class="breadcrumb">
+            <span>
+              YOUR STUDIO
+            </span>
+            <i>
+              /
+            </i>
+            <b id="current-page">
+              DASHBOARD
+            </b>
+          </div>
+          <div class="topbar-actions">
+            <span class="local-time" id="local-time">
+            </span>
+            <button class="icon-button theme-toggle" id="theme-toggle" aria-label="Switch to light theme" title="Toggle theme">
+              ☼
+            </button>
+            <div class="avatar" aria-hidden="true">
+              SS
+            </div>
+          </div>
+        </header>
+        <main id="main-content">
+          <section class="view is-visible" id="view-dashboard" aria-labelledby="dashboard-title">
+            <div class="hero-panel">
+              <div class="hero-photo" role="img" aria-label="Artist performing in Lagos at night">
+              </div>
+              <div class="hero-wash">
+              </div>
+              <div class="hero-content">
+                <span class="eyebrow">
+                  <span class="pulse-dot">
+                  </span>
+                  INDEPENDENT BY DESIGN · LAGOS, NIGERIA
+                </span>
+                <h1 id="dashboard-title">
+                  Your sound.
+                  <br>
+                  <em>
+                    Your route.
+                  </em>
+                </h1>
+                <p>
+                  A home base for the music you’re putting into the world.
+                </p>
+                <button class="button button-acid" data-go="submit">
+                  ＋ Start a release
+                  <span>
+                    ↗
+                  </span>
+                </button>
+              </div>
+              <div class="hero-stamp" aria-hidden="true">
+                SOUTH
+                <br>
+                <span>
+                  SIDE
+                </span>
+                <b>
+                  ✳
+                </b>
+              </div>
+              <div class="hero-caption">
+                <span>
+                  THE CITY DOESN’T SLEEP.
+                </span>
+                <span>
+                  NEITHER DOES THE SOUND.
+                  <b>
+                    ↗
+                  </b>
+                </span>
+              </div>
+            </div>
+            <div class="section-heading dashboard-heading">
+              <div>
+                <span class="eyebrow">
+                  YOUR CATALOGUE AT A GLANCE
+                </span>
+                <h2>
+                  Studio pulse
+                  <span class="acid-dot">
+                    .
+                  </span>
+                </h2>
+              </div>
+              <button class="button button-quiet" data-go="releases">
+                View all releases
+                <span>
+                  →
+                </span>
+              </button>
+            </div>
+            <div class="stats-grid" id="stats-grid">
+            </div>
+            <section class="genre-strip" aria-label="Featured Nigerian music genres">
+              <div class="genre-intro">
+                <span class="eyebrow">
+                  SOUNDS FROM HERE
+                </span>
+                <b>
+                  Local roots.
+                  <br>
+                  Global reach.
+                </b>
+                <small>
+                  THE SOUND HAS NO SINGLE LANE.
+                </small>
+              </div>
+              <div class="genre-tile genre-afro" style="background-image:url('https://images.unsplash.com/photo-1593717191400-84f38ee95485?auto=format&fit=crop&w=1200&q=80');background-color:#462126">
+                <span>
+                  01 / AFROBEATS
+                </span>
+              </div>
+              <div class="genre-tile genre-alte" style="background-image:url('https://images.unsplash.com/photo-1749475047619-66779b46f594?auto=format&fit=crop&w=1200&q=80');background-color:#383d2b">
+                <span>
+                  02 / ALTÉ
+                </span>
+              </div>
+              <div class="genre-tile genre-soul" style="background-image:url('https://images.unsplash.com/photo-1634155322814-907072ac721f?auto=format&fit=crop&w=1200&q=80');background-color:#69432c">
+                <span>
+                  03 / AFRO-SOUL
+                </span>
+              </div>
+            </section>
+            <div class="dashboard-lower">
+              <section class="panel recent-panel" aria-labelledby="recent-title">
+                <div class="panel-heading">
+                  <div>
+                    <span class="eyebrow">
+                      LATEST ACTIVITY
+                    </span>
+                    <h3 id="recent-title">
+                      Recent releases
+                    </h3>
+                  </div>
+                  <button class="link-button" data-go="releases">
+                    See all →
+                  </button>
+                </div>
+                <div id="recent-list">
+                </div>
+              </section>
+              <aside class="panel side-quote">
+                <span class="quote-mark">
+                  “
+                </span>
+                <p>
+                  Every big sound starts with somebody deciding to put it out there.
+                </p>
+                <span class="quote-byline">
+                  — SOUTHERN NIGERIA
+                </span>
+                <div class="equalizer" aria-hidden="true">
+                  <i>
+                  </i>
+                  <i>
+                  </i>
+                  <i>
+                  </i>
+                  <i>
+                  </i>
+                  <i>
+                  </i>
+                  <i>
+                  </i>
+                  <i>
+                  </i>
+                  <i>
+                  </i>
+                  <i>
+                  </i>
+                  <i>
+                  </i>
+                  <i>
+                  </i>
+                  <i>
+                  </i>
+                  <i>
+                  </i>
+                </div>
+              </aside>
+            </div>
+            <p class="demo-disclaimer">
+              DEMO ONLY
+              <span>
+                ·
+              </span>
+              Southside Distro does not deliver music to Spotify, Apple Music, YouTube Music, Audiomack or any other service.
+            </p>
+          </section>
+          <section class="view" id="view-submit" aria-labelledby="submit-title" hidden>
+            <div class="page-intro">
+              <div>
+                <span class="eyebrow">
+                  NEW SUBMISSION
+                  <span class="accent-slash">
+                    /
+                  </span>
+                  TAKE YOUR TIME
+                </span>
+                <h1 id="submit-title">
+                  Put it
+                  <em>
+                    out there.
+                  </em>
+                </h1>
+                <p>
+                  Fill in your release details. Your work autosaves in this browser as you go.
+                </p>
+              </div>
+              <div class="step-chip">
+                <span>
+                  01
+                </span>
+                RELEASE DETAILS
+              </div>
+            </div>
+            <div class="progress-wrap">
+              <div class="progress-label">
+                <span>
+                  FORM PROGRESS
+                </span>
+                <span id="progress-text">
+                  0% complete
+                </span>
+              </div>
+              <div class="progress-track" role="progressbar" aria-label="Form completion" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                <span id="progress-bar">
+                </span>
+              </div>
+            </div>
+            <form id="release-form" novalidate>
+              <div class="form-layout">
+                <div class="form-main">
+                  <fieldset class="form-section">
+                    <legend>
+                      <span>
+                        01
+                      </span>
+                      The artist
+                    </legend>
+                    <div class="field-grid">
+                      <div class="field" data-field="artistName">
+                        <label for="artistName">
+                          Artist / act name
+                          <b>
+                            *
+                          </b>
+                        </label>
+                        <input id="artistName" name="artistName" autocomplete="name" placeholder="e.g. Nia Sol" required>
+                        <small class="field-error" id="error-artistName">
+                        </small>
+                      </div>
+                      <div class="field" data-field="email">
+                        <label for="email">
+                          Email address
+                          <b>
+                            *
+                          </b>
+                        </label>
+                        <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+                        <small class="field-error" id="error-email">
+                        </small>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset class="form-section">
+                    <legend>
+                      <span>
+                        02
+                      </span>
+                      The release
+                    </legend>
+                    <div class="field-grid">
+                      <div class="field" data-field="title">
+                        <label for="title">
+                          Release title
+                          <b>
+                            *
+                          </b>
+                        </label>
+                        <input id="title" name="title" placeholder="What are we calling it?" required>
+                        <small class="field-error" id="error-title">
+                        </small>
+                      </div>
+                      <div class="field" data-field="releaseType">
+                        <label for="releaseType">
+                          Release type
+                          <b>
+                            *
+                          </b>
+                        </label>
+                        <select id="releaseType" name="releaseType" required>
+                          <option value="">
+                            Choose a format
+                          </option>
+                          <option>
+                            Single
+                          </option>
+                          <option>
+                            EP
+                          </option>
+                          <option>
+                            Album
+                          </option>
+                        </select>
+                        <small class="field-error" id="error-releaseType">
+                        </small>
+                      </div>
+                      <div class="field" data-field="genre">
+                        <label for="genre">
+                          Primary genre
+                          <b>
+                            *
+                          </b>
+                        </label>
+                        <select id="genre" name="genre" required>
+                          <option value="">
+                            Choose your lane
+                          </option>
+                          <option>
+                            Afrobeats
+                          </option>
+                          <option>
+                            Afro-fusion
+                          </option>
+                          <option>
+                            Afropop
+                          </option>
+                          <option>
+                            Afro-soul
+                          </option>
+                          <option>
+                            Alté
+                          </option>
+                          <option>
+                            Hip-hop / Rap
+                          </option>
+                          <option>
+                            Highlife
+                          </option>
+                          <option>
+                            R&B
+                          </option>
+                          <option>
+                            Gospel
+                          </option>
+                          <option>
+                            Other
+                          </option>
+                        </select>
+                        <small class="field-error" id="error-genre">
+                        </small>
+                      </div>
+                      <div class="field" data-field="releaseDate">
+                        <label for="releaseDate">
+                          Release date
+                          <b>
+                            *
+                          </b>
+                        </label>
+                        <input id="releaseDate" name="releaseDate" type="date" required>
+                        <small class="field-hint">
+                          Any future date works. Displayed in your local time zone.
+                        </small>
+                        <small class="field-error" id="error-releaseDate">
+                        </small>
+                      </div>
+                      <div class="field field-wide" data-field="audioUrl">
+                        <label for="audioUrl">
+                          Private audio link
+                          <b>
+                            *
+                          </b>
+                        </label>
+                        <input id="audioUrl" name="audioUrl" type="url" inputmode="url" placeholder="https://…" required>
+                        <small class="field-hint">
+                          A private listening link for this demo. It won’t be sent anywhere.
+                        </small>
+                        <small class="field-error" id="error-audioUrl">
+                        </small>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset class="form-section">
+                    <legend>
+                      <span>
+                        03
+                      </span>
+                      Cover artwork
+                    </legend>
+                    <div class="field" data-field="cover">
+                      <label>
+                        Choose a visual
+                        <b>
+                          *
+                        </b>
+                      </label>
+                      <div class="cover-options">
+                        <label class="upload-tile">
+                          <input id="coverUpload" type="file" accept="image/*">
+                          <span class="upload-icon">
+                            ↑
+                          </span>
+                          <b>
+                            Upload artwork
+                          </b>
+                          <small>
+                            Image file · compressed in this browser
+                          </small>
+                        </label>
+                        <div class="preset-grid" id="preset-grid" aria-label="Preset artwork gallery">
+                        </div>
+                      </div>
+                      <small class="field-error" id="error-cover">
+                      </small>
+                    </div>
+                  </fieldset>
+                  <fieldset class="form-section platform-section">
+                    <legend>
+                      <span>
+                        04
+                      </span>
+                      Where you want it to go
+                    </legend>
+                    <p class="section-helper">
+                      Choose intended platforms. This demo will not deliver anything.
+                    </p>
+                    <div class="platform-grid" id="platform-grid">
+                    </div>
+                    <small class="field-error" id="error-platforms">
+                    </small>
+                  </fieldset>
+                  <div class="form-actions">
+                    <span>
+                      <b>
+                        *
+                      </b>
+                      Required fields
+                    </span>
+                    <button class="button button-acid" type="submit">
+                      Review submission
+                      <span>
+                        ↗
+                      </span>
+                    </button>
+                  </div>
+                </div>
+                <aside class="preview-column">
+                  <div class="preview-sticky">
+                    <div class="preview-label">
+                      <span class="pulse-dot">
+                      </span>
+                      LIVE RELEASE PREVIEW
+                    </div>
+                    <article class="preview-card">
+                      <div class="preview-art" id="preview-art">
+                        <span class="art-placeholder">
+                          COVER
+                          <br>
+                          ART
+                        </span>
+                        <span class="preview-format" id="preview-format">
+                          SINGLE
+                        </span>
+                        <button class="play-button" type="button" aria-label="Preview is visual only">
+                          ▶
+                        </button>
+                      </div>
+                      <div class="preview-info">
+                        <span class="eyebrow" id="preview-artist">
+                          ARTIST NAME
+                        </span>
+                        <h3 id="preview-title">
+                          Your release title
+                        </h3>
+                        <div class="preview-meta">
+                          <span id="preview-genre">
+                            GENRE
+                          </span>
+                          <span id="preview-date">
+                            RELEASE DATE
+                          </span>
+                        </div>
+                        <div class="preview-meter" aria-hidden="true">
+                          <i>
+                          </i>
+                          <i>
+                          </i>
+                          <i>
+                          </i>
+                          <i>
+                          </i>
+                          <i>
+                          </i>
+                          <i>
+                          </i>
+                          <i>
+                          </i>
+                          <i>
+                          </i>
+                          <i>
+                          </i>
+                          <i>
+                          </i>
+                          <i>
+                          </i>
+                          <i>
+                          </i>
+                        </div>
+                      </div>
+                    </article>
+                    <p class="preview-note">
+                      A little picture of your release before it hits the world. Preview is visual only.
+                    </p>
+                    <div class="storage-note">
+                      <span>
+                        ⌁
+                      </span>
+                      <div>
+                        <b>
+                          SAVED ON THIS DEVICE
+                        </b>
+                        <p>
+                          Your draft lives in this browser. No account or upload server.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </aside>
+              </div>
+            </form>
+            <div class="confirmation-overlay" id="confirmation-overlay" hidden>
+              <section class="confirmation-card" role="dialog" aria-modal="true" aria-labelledby="confirm-title">
+                <button class="icon-button close-confirm" aria-label="Close confirmation">
+                  ×
+                </button>
+                <div class="confirm-spark">
+                  ✳
+                </div>
+                <span class="eyebrow">
+                  SUBMISSION SAVED · FRONT-END DEMO
+                </span>
+                <h2 id="confirm-title">
+                  That’s in the
+                  <em>
+                    books.
+                  </em>
+                </h2>
+                <p class="confirm-ref">
+                  REFERENCE
+                  <b id="confirm-reference">
+                  </b>
+                </p>
+                <div id="confirmation-details" class="confirmation-details">
+                </div>
+                <p class="confirm-warning">
+                  This is a local demo record. Your music has
+                  <b>
+                    not
+                  </b>
+                  been sent to any platform.
+                </p>
+                <div class="confirm-actions">
+                  <button class="button button-quiet" id="confirm-back">
+                    Back to form
+                  </button>
+                  <button class="button button-acid" id="confirm-done">
+                    View my releases
+                    <span>
+                      →
+                    </span>
+                  </button>
+                </div>
+              </section>
+            </div>
+          </section>
+          <section class="view" id="view-releases" aria-labelledby="releases-title" hidden>
+            <div class="page-intro releases-intro">
+              <div>
+                <span class="eyebrow">
+                  YOUR MUSIC, IN ONE PLACE
+                  <span class="accent-slash">
+                    /
+                  </span>
+                  LOCAL DEMO
+                </span>
+                <h1 id="releases-title">
+                  The
+                  <em>
+                    catalogue.
+                  </em>
+                </h1>
+                <p>
+                  Every release you’ve saved in this browser.
+                </p>
+              </div>
+              <button class="button button-acid" data-go="submit">
+                ＋ New release
+              </button>
+            </div>
+            <div class="releases-toolbar">
+              <label class="search-box">
+                <span>
+                  ⌕
+                </span>
+                <input id="release-search" type="search" placeholder="Search releases…" aria-label="Search releases">
+              </label>
+              <label class="select-control">
+                <span class="sr-only">
+                  Filter by release type
+                </span>
+                <select id="type-filter">
+                  <option value="all">
+                    All types
+                  </option>
+                  <option>
+                    Single
+                  </option>
+                  <option>
+                    EP
+                  </option>
+                  <option>
+                    Album
+                  </option>
+                </select>
+              </label>
+              <label class="select-control">
+                <span class="sr-only">
+                  Sort releases
+                </span>
+                <select id="sort-order">
+                  <option value="newest">
+                    Newest added
+                  </option>
+                  <option value="date-asc">
+                    Release date ↑
+                  </option>
+                  <option value="date-desc">
+                    Release date ↓
+                  </option>
+                  <option value="title">
+                    Title A–Z
+                  </option>
+                </select>
+              </label>
+            </div>
+            <div id="releases-list" class="releases-grid">
+            </div>
+            <div id="empty-state" class="empty-state" hidden>
+              <span class="empty-icon">
+                ♫
+              </span>
+              <span class="eyebrow">
+                NOTHING IN THE CRATES YET
+              </span>
+              <h2>
+                Your next release starts here.
+              </h2>
+              <p>
+                Save the details and keep your catalogue together on this device.
+              </p>
+              <button class="button button-acid" data-go="submit">
+                Submit your first release
+                <span>
+                  ↗
+                </span>
+              </button>
+            </div>
+            <p class="demo-disclaimer">
+              DEMO STATUS
+              <span>
+                ·
+              </span>
+              Status labels are illustrative only. No review or distribution process is connected.
+            </p>
+          </section>
+        </main>
+        <footer class="page-footer">
+          <span>
+            SOUTHSIDE DISTRO
+            <b>
+              ✳
+            </b>
+            FRONT-END PROJECT
+          </span>
+          <span>
+            BUILT FOR SOUTHERN NIGERIA · NG
+          </span>
+        </footer>
+      </div>
+    </div>
+    <div class="toast-region" id="toast-region" role="status" aria-live="polite">
+    </div>
+  </body>
+</html>
